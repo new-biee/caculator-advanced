@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            background-color: lawngreen;
+            width: 30%;
+            height: 400px;
+            padding-top: 5%;
+            padding-left: 15%;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td id="screen" style="text-align:right; background-color: white" colspan="4"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="clickBtn(1)">1</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(2)">2</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(3)">3</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="clickBtn(4)">4</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(5)">5</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(6)">6</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="clickBtn(7)">7</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(8)">8</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(9)">9</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn('*')">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="clearScreen()">C</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn(0)">0</button>
+            </td>
+            <td>
+                <button type="button" onclick="cal()">=</button>
+            </td>
+            <td>
+                <button type="button" onclick="clickBtn('/')">/</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+
+    let screen = document.getElementById('screen');
+
+    function clickBtn(value) {
+        screen.innerHTML += value;
+    }
+
+    function cal() {
+        let cal = screen.innerHTML;
+        let result = eval(cal);
+        screen.innerHTML = result;
+    }
+
+    function clearScreen() {
+        screen.innerHTML = '';
+    }
+
+</script>
+</body>
+</html>
